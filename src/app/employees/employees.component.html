@@ -1,0 +1,64 @@
+<h2>TCS Employees</h2>
+<div>
+    <label>Employee name:
+        <input #employeeName />
+    </label>
+    <label>Employee ID:
+        <input #employeeId />
+    </label>
+    <label>Current Address:
+        <input #currentAddress />
+    </label>
+    <label>Previous Address 1:
+        <input #previousAddress1 />
+    </label>
+    <label>Previous Address 2:
+        <input #previousAddress2 />
+    </label>
+    <label>Previous Address 3:
+        <input #previousAddress3 />
+    </label>
+    <label>Years of Experience:
+        <input #yearsOfExperience />
+    </label>
+    <label>Graduated From:
+        <input #graduatedFrom />
+    </label>
+    <label>Degree of Graduation:
+        <input #graduateDegree />
+    </label>
+    <label>Year of Graduation:
+        <input #graduationYear />
+    </label>
+    <label>Year of completing intermediate exams:
+        <input #intermediateYear />
+    </label>
+    <label>Year of completing matriculate exams:
+        <input #matriculationYear />
+    </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button
+        (click)="add(employeeName.value,employeeId.value,currentAddress.value,previousAddress1.value,previousAddress2.value,previousAddress3.value,yearsOfExperience.value,graduatedFrom.value,graduateDegree.value,graduationYear.value,intermediateYear.value,matriculationYear.value); employeeName.value=''; employeeId.value=''; currentAddress.value=''; employeeName.value=''; previousAddress1.value=''; previousAddress2.value=''; previousAddress3.value=''; yearsOfExperience.value=''; graduatedFrom.value=''; graduateDegree.value=''; graduationYear.value=''; intermediateYear.value=''; matriculationYear.value='';">
+        add
+    </button>
+</div>
+<ul class="employees">
+    <li *ngFor="let employee of employees">
+        <a routerLink="/detail/{{employee.employeeId}}">
+            <span class="badge">{{employee.id}}</span> {{employee.employeeName}}
+            <div><span>Employee ID: </span>{{employee.employeeId}}</div>
+            <div><span>Current Address: </span>{{employee.currentAddress}}</div>
+            <div><span>Previous Address 1: </span>{{employee.previousAddress1}}</div>
+            <div><span>Previous Address 2: </span>{{employee.previousAddress2}}</div>
+            <div><span>Previous Address 3: </span>{{employee.previousAddress3}}</div>
+            <div><span>Years of Experience: </span>{{employee.yearsOfExperience}}</div>
+            <div><span>Graduated From: </span>{{employee.graduatedFrom}}</div>
+            <div><span>Graduation Degree: </span>{{employee.graduateDegree}}</div>
+            <div><span>Graduation Year: </span>{{employee.graduationYear}}</div>
+            <div><span>Intermediate Year: </span>{{employee.intermediateYear}}</div>
+            <div><span>Matriculation Year: </span>{{employee.matriculationYear}}</div>
+            <br>
+        </a>
+        <button class="delete" title="delete employee" (click)="delete(employee)">x</button>
+    </li>
+</ul>

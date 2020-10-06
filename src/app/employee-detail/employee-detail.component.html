@@ -1,0 +1,55 @@
+<div *ngIf="employee">
+
+  <h2>{{employee.employeeName | uppercase}} Details</h2>
+  <div><span>id: </span>{{employee.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="employee.employeeName" placeholder="employeeName" />
+    </label>
+    <div><span>Employee ID: </span>{{employee.employeeId}}</div>
+    <br>
+    <label>Current Address:
+      <input [(ngModel)]="employee.currentAddress" placeholder="currentAddress" />
+    </label>
+    <br>
+    <label>Previous Address 1:
+      <input [(ngModel)]="employee.previousAddress1" placeholder="previousAddress1" />
+    </label>
+    <br>
+    <label>Previous Address 2:
+      <input [(ngModel)]="employee.previousAddress2" placeholder="previousAddress2" />
+    </label>
+    <br>
+    <label>Previous Address 3:
+      <input [(ngModel)]="employee.previousAddress3" placeholder="previousAddress3" />
+    </label>
+    <br>
+    <label>Years of Experience:
+      <input [(ngModel)]="employee.yearsOfExperience" placeholder="yearsOfExperience" />
+    </label>
+    <br>
+    <label>Graduated From:
+      <input [(ngModel)]="employee.previousAddress2" placeholder="graduatedFrom" />
+    </label>
+    <br>
+    <label>Degree of Graduation:
+      <input [(ngModel)]="employee.graduateDegree" placeholder="graduateDegree" />
+    </label>
+    <br>
+    <label>Year of Graduation:
+      <input [(ngModel)]="employee.graduationYear" placeholder="graduationYear" />
+    </label>
+    <br>
+    <label>Year of completing intermediate exams:
+      <input [(ngModel)]="employee.intermediateYear" placeholder="intermediateYear" />
+    </label>
+    <br>
+    <label>Year of completing matriculate exams:
+      <input [(ngModel)]="employee.matriculationYear" placeholder="matriculationYear" />
+    </label>
+    <br>
+
+  </div>
+
+</div>
+<button (click)="save()">save</button>
